@@ -1,5 +1,16 @@
+import { Container, Stack } from "@mui/material";
+
 const About = () => {
-  return <h1>This is an about page</h1>;
+  return (
+    <Container sx={{py: 5}}>
+      <Stack spacing={2}>
+      <h1>About</h1>
+      <p>
+        This is an about page
+      </p>
+      </Stack>
+    </Container>
+  )
 };
 
 export default About;
