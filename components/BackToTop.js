@@ -23,7 +23,7 @@ const BackToTop = ({ children }) => {
       <Box
         onClick={handleClick}
         role="presentation"
-        sx={{ position: "fixed", bottom: 16, right: 16 }}
+        sx={{ position: "fixed", bottom: 120, right: 16 }}
       >
         {children}
       </Box>
