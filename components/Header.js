@@ -7,8 +7,7 @@ import SportsHandballIcon from '@mui/icons-material/SportsHandball';
 import MuiNextLink from "@components/MuiNextLink";
 import Navbar from '@components/Navbar'
 import SideDrawer from "@components/SideDrawer";
-import useScrollTrigger from "@mui/material/useScrollTrigger";
-import Slide from '@mui/material/Slide';
+import HideOnScroll from "@components/HideOnScroll";
 import Fab from "@mui/material/Fab";
 import KeyboardArrowUp from "@mui/icons-material/KeyboardArrowUp";
 import BackToTop from "@components/BackToTop";
@@ -21,32 +20,32 @@ export const navLinks = [
 ];
 
 const Header = () => {
-  const trigger = useScrollTrigger();
-
   return (
     <>
-      <AppBar position="fixed" color="secondary" elevation="0">
-        <Toolbar>
-          <Container
-            maxWidth="lg"
-            sx={{ display: `flex`, justifyContent: `space-between`, alignItems: 'center' }}
-          >
-            <IconButton edge="start" aria-label="home">
-            <MuiNextLink activeClassName="active" href='/'>
-              <SportsHandballIcon
-                sx={{
-                  color: (theme) => theme.palette.primary,
-                }}
-                fontSize="large"
-              />
-            </MuiNextLink>
-          </IconButton>
-            This is your nav bar. Add links, logo etc.
-            <Navbar navLinks={navLinks} />
-            <SideDrawer navLinks={navLinks} />
-          </Container>
-        </Toolbar>
-      </AppBar>
+    <HideOnScroll>
+        <AppBar position="fixed" color="secondary" elevation={0}>
+          <Toolbar>
+            <Container
+              maxWidth="lg"
+              sx={{ display: `flex`, justifyContent: `space-between`, alignItems: 'center' }}
+            >
+              <IconButton edge="start" aria-label="home">
+              <MuiNextLink activeClassName="active" href='/'>
+                <SportsHandballIcon
+                  sx={{
+                    color: (theme) => theme.palette.primary,
+                  }}
+                  fontSize="large"
+                />
+              </MuiNextLink>
+            </IconButton>
+              This is your nav bar. Add links, logo etc.
+              <Navbar navLinks={navLinks} />
+              <SideDrawer navLinks={navLinks} />
+            </Container>
+          </Toolbar>
+        </AppBar>
+      </HideOnScroll>
       <Offset id="back-to-top-anchor" />
       <BackToTop>
         <Fab color="secondary" size="large" aria-label="back to top">
